@@ -66,7 +66,7 @@ function submit(){
     });
   }).catch(error=>{
     alert("Please Fill correct Details");
-    console.log("error", error);
+    console.log("error");
   })
 }
   return (

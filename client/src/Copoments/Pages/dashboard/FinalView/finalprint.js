@@ -119,7 +119,7 @@ this.setState({message: event.target.value})
         <div>
         <div className="main_loan" id="loanPDF">
         <div style={{marginTop:'2vw',marginLeft:'4rem'}}>
-        <img src={require('./user.jpeg')} className="loanDetailsLogo" alt="logo Details" />
+        <img src={require('../../../Images/CARA-logo.png')} className="loanDetailsLogo" alt="logo Details" />
         <div className="loanHead">
         <b style={{fontSize:'25px',left:650,position:'absolute'}}> Loan Details</b>
         {/* <button className="btn prt_btn" onClick={this.abdhdID}>PRINT</button>  */}

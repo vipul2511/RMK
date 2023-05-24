@@ -38,15 +38,15 @@ window.open(this.state.blobUrl);
               <br />
               <b className="text" >Loan Amount:</b>
               <text className="no">30000</text>
-              <b className="sidetext">More actions</b>
-              <img
+              {/* <b className="sidetext">More actions</b> */}
+              {/* <img
                 className="iconID"
                 src="https://img.icons8.com/color/48/000000/note.png"
               />
               <text className="sidetext1">Download invoice</text>
              <Button className="but" variant="outline-primary" onClick={this.down}>
                 Download
-              </Button>
+              </Button> */}
             </div>
             <div className="box2">
               <b className="text2">Loan status</b>

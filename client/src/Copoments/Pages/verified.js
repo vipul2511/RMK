@@ -2,10 +2,12 @@ import React from 'react';
 import './verified.css';
 import {Container,Col,Row} from 'react-bootstrap';
 import { FaFileAlt,FaQuestionCircle } from 'react-icons/fa'
+import Header from '../header/Header';
 function Verified() {
     return(
         <div className="back">
-           
+                               <Header />
+
            
            <center>
           
@@ -54,7 +56,7 @@ function Verified() {
                     <p className="text colo">Date: 24-05-2020</p> 
                     <p className="text colo">State: Rajasthan</p> 
                     <p className="text"><b> &#x20B9;25,000 </b> <i className="icon ">
-                   <FaQuestionCircle size={20}  />
+                   {/* <FaQuestionCircle size={20}  /> */}
                     </i></p> 
 
                      </div>
