@@ -19,7 +19,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-      Rashtriya Mahila Kosh (RMK)
+      Loan Management System (IMO)
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}

@@ -12,6 +12,7 @@ class Application extends Component {
         ApplicationID:null,
         PhoneNumber:null
     }
+    
     TrackApp=()=>{
         let PhnNO=this.state.PhoneNo;
        let AppNum=Number(this.state.ApplicationID);
@@ -28,14 +29,16 @@ class Application extends Component {
      readData=()=>{
         let userID= localStorage.getItem('UserID');
         console.log('user id',userID);
-       firebase.database().ref('users/Application/'+userID).on('value',snap=>{
+       firebase.database().ref('users/Application/'+userID).on('value',async snap=>{
             console.log('value', snap);
             let post = snap.val()?.finalData.AppID;
             let phone=snap.val()?.finalData.Phone;
             this.setState({AppNumber:post});
             this.setState({PhoneNo:phone});
-            console.log(' post data',post);
+            console.log(' post data',snap.val());
             console.log(phone);
+            await localStorage.setItem('ApplicationData',JSON.stringify(snap?.val()?.finalData));
+
         });
         }
      componentWillMount(){
@@ -57,7 +60,7 @@ class Application extends Component {
                         <form>
                             <input type="number" className="input-box" onChange={this.handleChange}  name="ApplicationID" placeholder="APPLICATION ID" />
                             <input type="number" className="input-box" onChange={this.handleChange}  name="PhoneNumber" placeholder="ENTER YOUR MOBILE NUMBER" />
-                            <h2><button type="button" onClick={this.TrackApp} className=" btn button1">TRACK APPLICATION</button></h2>
+                           <h2><button type="button" onClick={this.TrackApp} className=" btn button1">TRACK APPLICATION</button></h2>
                            
                         </form>
                     </div>

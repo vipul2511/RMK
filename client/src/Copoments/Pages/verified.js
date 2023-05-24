@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './verified.css';
 import {Container,Col,Row} from 'react-bootstrap';
 import { FaFileAlt,FaQuestionCircle } from 'react-icons/fa'
 import Header from '../header/Header';
 function Verified() {
+ const [isStatus, setStatus] = useState({});
+ let userData= localStorage.getItem('ApplicationData');
+
+ useEffect(() => {
+  if(userData){
+    const parseData = JSON.parse(userData);
+  setStatus(parseData);
+  }
+ },[userData]);
+console.log('userData', userData);
     return(
         <div className="back">
                                <Header />
@@ -18,12 +28,11 @@ function Verified() {
                
                    <div className="column cols" style={{width: "70%"}}>
                      <h5 className="left">User Address</h5> 
-                     <h6 className="left">Bharat Shrotriya</h6> 
-                     <p className="left">Mahalakshmi nagar aaramachine badgoan udaipur,
-                       Badgoan UDAIPUR-313001,Rajasthan</p> 
-                       <h6 className="left">Phone number  : 9166954281</h6>
+                     <h6 className="left">{isStatus?.Name || ''}</h6> 
+                     <p className="left">{isStatus?.Address || ''}</p> 
+                       <h6 className="left">Phone number  : {isStatus?.Phone || ''}</h6>
                    </div>
-
+{/* 
                    <div className="column cols" className="left" style={{width: "15%"}}>
                      <br></br>
                      <h5>More actions</h5>
@@ -35,11 +44,11 @@ function Verified() {
                     </div>
                   
                     
-                   </div>
+                   </div> */}
 
-                   <div className="column cols" className="left" style={{width: "15%"}}>
+                   {/* <div className="column cols" className="left" style={{width: "15%"}}>
                    <button class="btn btns"> <b>Download</b></button>
-                   </div>
+                   </div> */}
           
             </div>
 
@@ -52,10 +61,10 @@ function Verified() {
                     </div>
 
                  <div className="column " style={{width: "20%"}}>
-                   <h6 className="text">Application ID: 246647</h6>
-                    <p className="text colo">Date: 24-05-2020</p> 
-                    <p className="text colo">State: Rajasthan</p> 
-                    <p className="text"><b> &#x20B9;25,000 </b> <i className="icon ">
+                   <h6 className="text">Application ID: {isStatus?.AppID || '-'}</h6>
+                    <p className="text colo">Date: 24-05-2023</p> 
+                    <p className="text colo">State: {isStatus?.stateName || '-'}</p> 
+                    <p className="text"><b> &#x20B9;{isStatus?.Amount || '-'} </b> <i className="icon ">
                    {/* <FaQuestionCircle size={20}  /> */}
                     </i></p> 
 

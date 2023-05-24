@@ -20,12 +20,12 @@ export const mainListItems = (
       </ListItemIcon>
       <Link to="/Dashboard" ><ListItemText  primary="Dashboard"  style={{color:'black'}}/></Link> 
     </ListItem>
-    <ListItem button>
+    {/* <ListItem button>
       <ListItemIcon>
         <InsertPhotoIcon/>
       </ListItemIcon>
       <Link to="/AdminGallery"><ListItemText primary="Gallery" style={{color:'black'}} /></Link>
-    </ListItem>
+    </ListItem> */}
    
     <ListItem button>
       <ListItemIcon>
